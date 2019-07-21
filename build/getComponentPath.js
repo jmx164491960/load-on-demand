@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * 判断刚路径是否含有index.js
+ * @param {String} dir 
+ */
 function hasIndexJs(dir) {
     let dirs = [];
     try {
@@ -8,12 +12,14 @@ function hasIndexJs(dir) {
     } catch(e) {
         dirs = null;
     }
-    // console.log('dirs:', dirs);
     return dirs && dirs.includes('index.js');
 }
 
-const getPath = function() {
-    const entryDir = path.resolve(__dirname, '../packages');
+/**
+ * 获取指定入口和入口下包含index.js的文件夹的路径
+ * @param {String} entryDir 
+ */
+const getPath = function(entryDir) {
     let dirs = fs.readdirSync(entryDir);
     
     const result = {
@@ -24,7 +30,6 @@ const getPath = function() {
     }).forEach(dir => {
         result[dir] = path.resolve(entryDir, dir); 
     });
-    console.log('result:', result);
     return result;
 }
 

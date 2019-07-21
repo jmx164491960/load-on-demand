@@ -14,15 +14,7 @@
     "url": "git+https://github.com/jmx164491960/load-on-demand.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build--test": "cross-env NODE_ENV=testing env_config=test node build/build.js",
-    "build--prod": "cross-env NODE_ENV=production env_config=prod node build/build.js",
-    "build--beta": "cross-env NODE_ENV=production env_config=prod node build/build.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js"
+    "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
   },
   "dependencies": {
     "axios": "^0.17.1",

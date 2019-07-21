@@ -15,12 +15,7 @@ const getComponentPath = require('./getComponentPath');
 const env = config.build[process.env.env_config+'Env']
 
 // 整理入口
-const components = getComponentPath();
-const entrys = {}
-Object.keys(components).forEach(item => {
-  entrys[item] = components[item]
-});
-console.log('entry:', entrys);
+const entrys = getComponentPath(path.resolve(__dirname, '../packages'));
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: entrys,
@@ -56,14 +51,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: (getPath) => {
-        const path1 = utils.assetsPath('theme/[name].css');
-        const path2 = getPath(path1);
-        console.log('path1:', path1);
-        console.log('path2:', path2);
-        return path2;
-      },
-      // filename: utils.assetsPath('theme/[name].css'),
+      filename: utils.assetsPath('theme/[name].css')
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
