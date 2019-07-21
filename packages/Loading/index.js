@@ -1,8 +1,8 @@
-import loading from './src/main';
+import Loading from './src/main';
 
 /* istanbul ignore next */
-loading.install = function(Vue) {
-  Vue.component(loading.name, loading);
+Loading.install = function(Vue) {
+  Vue.component(Loading.name, Loading);
 };
 
-export default loading;
+export default Loading;

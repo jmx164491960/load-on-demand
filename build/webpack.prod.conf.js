@@ -15,12 +15,12 @@ const getComponentPath = require('./getComponentPath');
 const env = config.build[process.env.env_config+'Env']
 
 // 整理入口
-getComponentPath();
-const components = require('../components.json')
+const components = getComponentPath();
 const entrys = {}
 Object.keys(components).forEach(item => {
   entrys[item] = components[item]
-})
+});
+console.log('entry:', entrys);
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: entrys,

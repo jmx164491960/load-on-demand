@@ -1,8 +1,8 @@
-import loadMore from './src/main';
+import LoadMore from './src/main';
 
 /* istanbul ignore next */
-loadMore.install = function(Vue) {
-  Vue.component(loadMore.name, loadMore);
+LoadMore.install = function(Vue) {
+  Vue.component(LoadMore.name, LoadMore);
 };
 
-export default loadMore;
+export default LoadMore;

@@ -9,17 +9,17 @@
     "stage-2"
   ],
   "plugins": ["transform-vue-jsx", "transform-runtime", 
-    [
-      "component",
-      {
-        "libraryName": "load-on-demand",
-        "camel2Dash": false,
-        "styleLibrary": {
-          "base": false,
-          "name": "theme"
-        }
-      }
-    ]
+    // [
+    //   "component",
+    //   {
+    //     "libraryName": "load-on-demand",
+    //     "camel2Dash": false,
+    //     "styleLibrary": {
+    //       "base": false,
+    //       "name": "theme"
+    //     }
+    //   }
+    // ]
   ],
   "env": {
     "test": {

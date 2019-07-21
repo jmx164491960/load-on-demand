@@ -1,11 +1,11 @@
 import Button from './Button';
-import loading from './loading';
-import loadMore from './loadMore';
+import Loading from './Loading';
+import LoadMore from './LoadMore';
 
 const components = [
   Button,
-  loadMore,
-  loading
+  LoadMore,
+  Loading
 ];
 
 const install = function(Vue) {
@@ -21,6 +21,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   install, // 全量引入
   Button,
-  loadMore,
-  loading
+  LoadMore,
+  Loading
 };
