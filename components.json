@@ -1,0 +1,6 @@
+{
+    "index": "./packages/index.js",
+    "Button": "./packages/Button/index.js",
+    "loading": "./packages/Button/index.js",
+    "loadMore": "./packages/Button/index.js"
+}
